@@ -5,6 +5,7 @@ import { Form, Error, Input, Switcher, Title, Wrapper } from "../components/auth
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 import { auth } from "../firebase";
+import GithubButton from "../components/github-btn";
 
 const CreateAccount = () => {
 
@@ -31,11 +32,8 @@ const CreateAccount = () => {
     setError("");
     if(isLoading || name == "" || email == "" || password == "") return
     try {
-      // create an account
-      // set the name of the user.
-      // redirect to the home page
-
       setLoading(true);
+
       const credentials = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -93,6 +91,7 @@ const CreateAccount = () => {
       <Switcher>
         Already have an account? <Link to="/login">Log in &rarr;</Link>
       </Switcher>
+      <GithubButton/>
     </Wrapper>
   );
 }
