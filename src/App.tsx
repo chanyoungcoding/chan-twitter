@@ -86,6 +86,9 @@ const GlobalStyles = createGlobalStyle`
     'Helvetica Neue', 
     sans-serif;
   }
+  ::-webkit-scrollbar {
+    display:none;
+  }
 `
 
 const Wrapper = styled.div`
